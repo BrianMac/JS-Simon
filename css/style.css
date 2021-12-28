@@ -1,0 +1,93 @@
+#SimonMain {
+    border-collapse: collapse;
+    width: 1024px;
+}
+
+#newHighScore {
+    visibility: hidden;
+}
+
+#playArea {
+    margin: auto;
+    width: 1024px;
+}
+
+.upper {
+    width: 1024px;
+    height: 260px;
+    border: 0px;
+    padding: 0px;
+}
+
+.lower {
+    width: 1024px;
+    height: 509px;
+    border: 0px;
+    padding: 0px;
+}
+
+#PlayerTurnLabel {
+    font-size: 2em;
+    font-weight: lighter;
+    color: gray;
+}
+
+#UL {
+    background-image: url("../img/UL2.png");
+    width: 512px;
+    height: 260px;
+    padding: 0px;
+}
+
+#UL:hover {
+    background-image: url("../img/UL4.png");
+}
+
+#UL:active {
+    background-image: url("../img/UL3.png");
+}
+
+#UR {
+    background-image: url("../img/UR2.png");
+    width: 512px;
+    height: 260px;
+    padding: 0px;
+}
+
+#UR:hover {
+    background-image: url("../img/UR4.png");
+}
+
+#UR:active {
+    background-image: url("../img/UR3.png");
+}
+
+#LL {
+    background-image: url("../img/LL2.png");
+    width: 512px;
+    height: 509px;
+    padding: 0px;
+}
+
+#LL:hover {
+    background-image: url("../img/LL4.png");
+}
+
+#LL:active {
+    background-image: url("../img/LL3.png");
+}
+
+#LR {
+    background-image: url("../img/LR2.png");
+    width: 512px;
+    height: 509px;
+    padding: 0px;
+}
+
+#LR:hover {
+    background-image: url("../img/LR4.png");
+}
+
+#LR:active {
+    background-image: url("../img/LR3.png");
+}
