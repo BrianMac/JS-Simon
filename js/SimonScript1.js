@@ -32,8 +32,7 @@ var sequenceCounter = -1;
 var guessTimer;
 
 //Local Storage Stuff
-//window.localStorage.removeItem('highscore');
-
+// Show a high-score of Zero if there's no previous score saved in local storage
 if (window.localStorage.getItem('highscore') != null)
 {
     highScore = window.localStorage.getItem('highscore');
@@ -42,10 +41,13 @@ if (window.localStorage.getItem('highscore') != null)
     highScore = window.localStorage.getItem('highscore');
 }
 
+//display initial high-score
 document.getElementById("HighScoreLabel").innerHTML = "High Score: " + highScore;
 
+//Initial state of page locks the Simon buttons until user clicks start button
 lockButtons();
 
+// Event listener for all button presses
 x = {
     aInternal: 0,
     aListener: function(val) {},
@@ -146,7 +148,7 @@ function StartGame() {
     document.getElementById("PlayerTurnLabel").innerHTML = "SIMON'S Turn";
     document.getElementById("PlayerTurnLabel").style.color = "red";
 
-    // Play intro music only per page load
+    // Play intro music only once per page load
     var delayStart = 1500;
     // disable buttons until player's turn
     lockButtons();
@@ -213,6 +215,7 @@ function PlayerTurn() {
     StartGuessTimer();
 }
 
+//Starts the timer used for each segment of the sequence
 function StartGuessTimer() {
     guessTimer = setTimeout(function () {
         lockButtons();
@@ -254,6 +257,7 @@ function UpdateScore() {
     }
 }
 
+//calls playtone() function for each segment of the sequence
 function PlaySequence() {
     clearTimeout(guessTimer);
         sequence.forEach(function (sequenceIndex, index) {
@@ -266,6 +270,7 @@ function PlaySequence() {
         }, sequence.length * (sequenceDelay * 1000));
 }
 
+//Plays single note
 function playTone(num) {
     tone = new Audio('audio/tone0.mp3');
     switch (num) {
@@ -291,6 +296,7 @@ function playTone(num) {
     tone.playbackRate = 1;
 }
 
+//light up the buttons when the sequence audio is playing
 function buttonLightUp(num) {
 
     switch (num) {
